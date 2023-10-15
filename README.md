@@ -15,3 +15,4 @@ HM2 Task 1 item 8
 - `*_override.tf.json` - любой файл, названием которого заканчивается на _override.tf.json
 - `.terraformrc` - любой файл с данным названием 
 - `terraform.rc` - любой файл с данным названием
+//new line
