@@ -16,3 +16,4 @@ HM2 Task 1 item 8
 - `.terraformrc` - любой файл с данным названием 
 - `terraform.rc` - любой файл с данным названием
 //new line
+//change for PyCharm 1
