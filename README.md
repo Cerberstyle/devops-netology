@@ -1,12 +1,14 @@
 # devops-netology
 HM_02-git-04-tools
-- Task 1
+- Task 1 <br />
+
+
 `commit aefead2207ef7e2aa5dc81a34aedf0cad4c32545` <br />
 `Author: Alisdair McDiarmid <alisdair@users.noreply.github.com>` <br />
 `Date:   Thu Jun 18 10:29:58 2020 -0400` <br />
-<br />
+
 `    Update CHANGELOG.md` <br />
-<br />
+
 `diff --git a/CHANGELOG.md b/CHANGELOG.md` <br />
 `index 86d70e3e0d..588d807b17 100644` <br />
 `--- a/CHANGELOG.md` <br />
@@ -40,10 +42,11 @@ dd01a35078 Update CHANGELOG.md <br />
 41ab0aef7a0fe030e84018973a64135b11abcd70 <br />
 66ebff90cdfaa6938f26f908c7ebad8d547fea17 <br />
 8364383c359a6b738a436d1b7745ccdce178df47
-
-
-
-
+<br />
+<br />
+<br />
+<br />
+<br />
 HM2 Task 1 item 8
 
 #Будет игнорироваться:
