@@ -1,8 +1,6 @@
 # devops-netology
 HM_02-git-04-tools
-- Task 1 <br />
-
-
+- Task 1
 `commit aefead2207ef7e2aa5dc81a34aedf0cad4c32545` <br />
 `Author: Alisdair McDiarmid <alisdair@users.noreply.github.com>` <br />
 `Date:   Thu Jun 18 10:29:58 2020 -0400` <br />
@@ -21,10 +19,13 @@ HM_02-git-04-tools
 ` * command/0.13upgrade: Fix `0.13upgrade` usage help text to include options ([#25127](https://github.com/hashicorp/terraform/issues/25127))` <br />
 ` * command/0.13upgrade: Do not add source for builtin provider ([#25215](https://github.com/hashicorp/terraform/issues/25215))` <br />
 ` * command/apply: Fix bug which caused Terraform to silently exit on Windows when using absolute plan path ([#25233](https://github.com/hashicorp/terraform/issues/25233))` <br />
- <br />
+- - Результат был получен командой `git show aefea`
+---
 - Task 2
 - - tag: v0.12.23
+- - - Результат получен командой `git show --no-patch --oneline 85024d3`
 - - 56cd7859e0 9ea88f22fc
+- - - Результат получен командой `git show b8d720`, после чего взята строка Merge
 - - 33ff1c03bb (HEAD, tag: v0.12.24) v0.12.24 <br />
 b14b74c493 [Website] vmc provider links <br />
 3f235065b9 Update CHANGELOG.md <br />
@@ -36,13 +37,17 @@ d5f9411f51 command: Fix bug when using terraform login on Windows <br />
 dd01a35078 Update CHANGELOG.md <br />
 225466bc3e Cleanup after v0.12.23 release <br />
 85024d3100 (tag: v0.12.23) v0.12.23 <br />
+- - - Можно использовать `git show --no-patch --oneline v0.12.23...v0.12.24`, но он обрезает последний коммит. Я установил HEAD на самом позднем коммите 33ff1c03bb (`git checkout 33ff1c03bb `), а потом сделал `git log --oneline`
 - - services *disco.Disco
+- - - Командой `git log -S 'func providerSource'` нашёл 2 коммита. Так как нас интересует момент создания функции, то берём самый ранний из них и делаем `git show 8c928e83589d90a031f811fae52a81be7153e82f`, находим строку `+func providerSource(services *disco.Disco) getproviders.Source {`и выстаскиваем из неё параметры. Чтобы долго не искать нужную строку, можно переместить HEAD на найденный ранее коммит и сделать `git grep 'func providerSource'`, если HEAD не переместить на нужный коммит, то grep найдёт более поздний вариант функции, где пераметры будут уже другими
 - - 78b12205587fe839f10d946ea3fdc06719decb05 <br />
 52dbf94834cb970b510f2fba853a5b49ad9b1a46 <br />
 41ab0aef7a0fe030e84018973a64135b11abcd70 <br />
 66ebff90cdfaa6938f26f908c7ebad8d547fea17 <br />
-8364383c359a6b738a436d1b7745ccdce178df47 <br />
+8364383c359a6b738a436d1b7745ccdce178df47
+- - - Сначала ищу, в каком файле указана функция, с помощью `git grep 'func globalPluginDirs'` выясняю, что находится она в файле *plugins.go*, далее командой `git log -L :globalPluginDirs:plugins.go` просматриваю коммиты. Для более краткого вывода можно ввести `git log --no-patch --oneline -L :globalPluginDirs:plugins.go`
 - - Martin Atkins <mart@degeneration.co.uk>
+- - - С помощью команды `git log -S 'func synchronizedWriters'` смотрю коммиты, нашёл два, нас интересует самый ранний, *commit 5ac311e2a91e381e2f52234668b49ba670aa0fe5*, строкой ниже видем его автора: `Author: Martin Atkins <mart@degeneration.co.uk>`
 
 <br />
 <br />
