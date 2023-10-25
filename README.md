@@ -19,7 +19,7 @@ HM_02-git-04-tools
 ` * command/0.13upgrade: Fix `0.13upgrade` usage help text to include options ([#25127](https://github.com/hashicorp/terraform/issues/25127))` <br />
 ` * command/0.13upgrade: Do not add source for builtin provider ([#25215](https://github.com/hashicorp/terraform/issues/25215))` <br />
 ` * command/apply: Fix bug which caused Terraform to silently exit on Windows when using absolute plan path ([#25233](https://github.com/hashicorp/terraform/issues/25233))` <br />
----
+ <br />
 - Task 2
 - - tag: v0.12.23
 - - 56cd7859e0 9ea88f22fc
