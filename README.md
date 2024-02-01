@@ -8,9 +8,9 @@ ter-homeworks_hw-01
 Task1
 1. ===<br />
 `cerberus@Mac-mini-ILYA src % terraform init` <br />
-<br />
+
 `Initializing the backend...` <br />
-<br />
+
 `Initializing provider plugins...` <br />
 `- Finding kreuzwerker/docker versions matching "~> 3.0.1"...` <br />
 `- Finding latest version of hashicorp/random...` <br />
