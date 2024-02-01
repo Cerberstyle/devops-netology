@@ -97,9 +97,9 @@ c) Строка 31:
 ` Требуемая версия terraform */` <br />
 `}` <br />
 `provider "docker" {}` <br />
-<br />
+
 `#однострочный комментарий` <br />
-<br />
+
 `resource "random_password" "random_string" {` <br />
 `  length      = 16` <br />
 `  special     = false` <br />
