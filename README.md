@@ -1,162 +1,149 @@
 # devops-netology
-**HM_05-virt-03-iaac**
+ter-homeworks_hw-01
 
-**Task 1**
-![Снимок экрана 2023-11-10 в 00 11 34](https://github.com/Cerberstyle/devops-netology/assets/89096235/63c977c9-6c69-4bc2-b7c1-afcd1dce428c)
-
-
-**Task 2**
-
-`(devops) cerberus@Mac-mini-ILYA cloud % terraform apply                                  ` <br />
-`yandex_vpc_network.default: Refreshing state... [id=enpodt5lp3uhec5ai3ld]` <br />
-`yandex_vpc_subnet.default: Refreshing state... [id=b0c4opb4og88751r6vd8]` <br />
-`` <br />
-`Note: Objects have changed outside of Terraform` <br />
-`` <br />
-`Terraform detected the following changes made outside of Terraform since the last "terraform apply" which may have affected this plan:` <br />
-`` <br />
-`  # yandex_vpc_network.default has been deleted` <br />
-`  - resource "yandex_vpc_network" "default" {` <br />
-`      - id                        = "enpodt5lp3uhec5ai3ld" -> null` <br />
-`        name                      = "net"` <br />
-`        # (5 unchanged attributes hidden)` <br />
-`    }` <br />
-`` <br />
-`  # yandex_vpc_subnet.default has been deleted` <br />
-`  - resource "yandex_vpc_subnet" "default" {` <br />
-`      - id             = "b0c4opb4og88751r6vd8" -> null` <br />
-`        name           = "subnet"` <br />
-`        # (7 unchanged attributes hidden)` <br />
-`    }` <br />
-`` <br />
-`` <br />
-`Unless you have made equivalent changes to your configuration, or ignored the relevant attributes using ignore_changes, the following plan may include actions to` <br />
-`undo or respond to these changes.` <br />
-`` <br />
-`─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────` <br />
-`` <br />
-`Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:` <br />
-`  + create` <br />
-`` <br />
-`Terraform will perform the following actions:` <br />
-`` <br />
-`  # yandex_compute_instance.node01 will be created` <br />
-`  + resource "yandex_compute_instance" "node01" {` <br />
-`      + allow_stopping_for_update = true` <br />
-`      + created_at                = (known after apply)` <br />
-`      + folder_id                 = (known after apply)` <br />
-`      + fqdn                      = (known after apply)` <br />
-`      + gpu_cluster_id            = (known after apply)` <br />
-`      + hostname                  = "node01.netology.cloud"` <br />
-`      + id                        = (known after apply)` <br />
-`      + metadata                  = {` <br />
-`          + "ssh-keys" = <<-EOT` <br />
-`                centos:ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICgO911zWiTXIkud11spaxLa5H2hoSBBUJYjRICzqpOq cerberus@Mac-mini-ILYA.local` <br />
-`            EOT` <br />
-`        }` <br />
-`      + name                      = "node01"` <br />
-`      + network_acceleration_type = "standard"` <br />
-`      + platform_id               = "standard-v1"` <br />
-`      + service_account_id        = (known after apply)` <br />
-`      + status                    = (known after apply)` <br />
-`      + zone                      = "ru-central1-c"` <br />
-`` <br />
-`      + boot_disk {` <br />
-`          + auto_delete = true` <br />
-`          + device_name = (known after apply)` <br />
-`          + disk_id     = (known after apply)` <br />
-`          + mode        = (known after apply)` <br />
-`` <br />
-`          + initialize_params {` <br />
-`              + block_size  = (known after apply)` <br />
-`              + description = (known after apply)` <br />
-`              + image_id    = "fd8cqujpntm1f5m46kq8"` <br />
-`              + name        = "root-node01"` <br />
-`              + size        = 10` <br />
-`              + snapshot_id = (known after apply)` <br />
-`              + type        = "network-hdd"` <br />
-`            }` <br />
-`        }` <br />
-`` <br />
-`      + network_interface {` <br />
-`          + index              = (known after apply)` <br />
-`          + ip_address         = (known after apply)` <br />
-`          + ipv4               = true` <br />
-`          + ipv6               = (known after apply)` <br />
-`          + ipv6_address       = (known after apply)` <br />
-`          + mac_address        = (known after apply)` <br />
-`          + nat                = true` <br />
-`          + nat_ip_address     = (known after apply)` <br />
-`          + nat_ip_version     = (known after apply)` <br />
-`          + security_group_ids = (known after apply)` <br />
-`          + subnet_id          = (known after apply)` <br />
-`        }` <br />
-`` <br />
-`      + resources {` <br />
-`          + core_fraction = 100` <br />
-`          + cores         = 4` <br />
-`          + memory        = 4` <br />
-`        }` <br />
-`    }` <br />
-`` <br />
-`  # yandex_vpc_network.default will be created` <br />
-`  + resource "yandex_vpc_network" "default" {` <br />
-`      + created_at                = (known after apply)` <br />
-`      + default_security_group_id = (known after apply)` <br />
-`      + folder_id                 = (known after apply)` <br />
-`      + id                        = (known after apply)` <br />
-`      + labels                    = (known after apply)` <br />
-`      + name                      = "net"` <br />
-`      + subnet_ids                = (known after apply)` <br />
-`    }` <br />
-`` <br />
-`  # yandex_vpc_subnet.default will be created` <br />
-`  + resource "yandex_vpc_subnet" "default" {` <br />
-`      + created_at     = (known after apply)` <br />
-`      + folder_id      = (known after apply)` <br />
-`      + id             = (known after apply)` <br />
-`      + labels         = (known after apply)` <br />
-`      + name           = "subnet"` <br />
-`      + network_id     = (known after apply)` <br />
-`      + v4_cidr_blocks = [` <br />
-`          + "192.168.101.0/24",` <br />
-`        ]` <br />
-`      + v6_cidr_blocks = (known after apply)` <br />
-`      + zone           = "ru-central1-c"` <br />
-`    }` <br />
-`` <br />
-`Plan: 3 to add, 0 to change, 0 to destroy.` <br />
-`` <br />
-`Changes to Outputs:` <br />
-`  + external_ip_address_node01_yandex_cloud = (known after apply)` <br />
-`  + internal_ip_address_node01_yandex_cloud = (known after apply)` <br />
-`` <br />
-`Do you want to perform these actions?` <br />
-`  Terraform will perform the actions described above.` <br />
-`  Only 'yes' will be accepted to approve.` <br />
-`` <br />
-`  Enter a value: yes` <br />
-`` <br />
-`yandex_vpc_network.default: Creating...` <br />
-`yandex_vpc_network.default: Creation complete after 3s [id=enpruki3sast4jv04e6q]` <br />
-`yandex_vpc_subnet.default: Creating...` <br />
-`yandex_vpc_subnet.default: Creation complete after 1s [id=b0cnrqcvjf9621f9h8k3]` <br />
-`yandex_compute_instance.node01: Creating...` <br />
-`yandex_compute_instance.node01: Still creating... [10s elapsed]` <br />
-`yandex_compute_instance.node01: Still creating... [20s elapsed]` <br />
-`yandex_compute_instance.node01: Still creating... [30s elapsed]` <br />
-`yandex_compute_instance.node01: Creation complete after 38s [id=ef37vj7k5in4godcibe4]` <br />
-`` <br />
-`Apply complete! Resources: 3 added, 0 changed, 0 destroyed.` <br />
-`` <br />
-`Outputs:` <br />
-`` <br />
-`external_ip_address_node01_yandex_cloud = "51.250.37.61"` <br />
-`internal_ip_address_node01_yandex_cloud = "192.168.101.27"` <br />
-
-![Pasted Graphic](https://github.com/Cerberstyle/devops-netology/assets/89096235/1e76ec96-57b8-4751-9682-f438bdb4412e)
-
-**Task 3**
+Чек лист:
+![Pasted Graphic](https://github.com/Cerberstyle/devops-netology/assets/89096235/b4d31dab-4255-431a-80a1-e57506503fa7)
 
 
-**Task 4**
+Task1
+1. ===<br />
+`cerberus@Mac-mini-ILYA src % terraform init` <br />
+<br />
+`Initializing the backend...` <br />
+<br />
+`Initializing provider plugins...` <br />
+`- Finding kreuzwerker/docker versions matching "~> 3.0.1"...` <br />
+`- Finding latest version of hashicorp/random...` <br />
+`- Installing kreuzwerker/docker v3.0.2...` <br />
+`- Installed kreuzwerker/docker v3.0.2 (unauthenticated)` <br />
+`- Installing hashicorp/random v3.6.0...` <br />
+`- Installed hashicorp/random v3.6.0 (unauthenticated)` <br />
+<br />
+`Terraform has created a lock file .terraform.lock.hcl to record the provider` <br />
+`selections it made above. Include this file in your version control repository` <br />
+`so that Terraform can guarantee to make the same selections by default when` <br />
+`you run "terraform init" in the future.` <br />
+<br />
+`╷` <br />
+`│ Warning: Incomplete lock file information for providers` <br />
+`│ ` <br />
+`│ Due to your customized provider installation methods, Terraform was forced to calculate lock file checksums locally for the following providers:` <br />
+`│   - hashicorp/random` <br />
+`│   - kreuzwerker/docker` <br />
+`│ ` <br />
+`│ The current .terraform.lock.hcl file only includes checksums for darwin_arm64, so Terraform running on another platform will fail to install these providers.` <br />
+`│ ` <br />
+`│ To calculate additional checksums for another platform, run:` <br />
+`│   terraform providers lock -platform=linux_amd64` <br />
+`│ (where linux_amd64 is the platform to generate)` <br />
+`╵` <br />
+<br />
+`Terraform has been successfully initialized!` <br />
+<br />
+`You may now begin working with Terraform. Try running "terraform plan" to see` <br />
+`any changes that are required for your infrastructure. All Terraform commands` <br />
+`should now work.` <br />
+<br />
+`If you ever set or change modules or backend configuration for Terraform,` <br />
+`rerun this command to reinitialize your working directory. If you forget, other` <br />
+`commands will detect it and remind you to do so if necessary.` <br />
+<br />
+2. personal.auto.tfvars<br />
+3. "result": "PpVCCHDer5dnsCjY"<br />
+4. ===<br />
+`cerberus@Mac-mini-ILYA src % terraform validate` <br />
+`╷` <br />
+`│ Error: Missing name for resource` <br />
+`│ ` <br />
+`│   on main.tf line 24, in resource "docker_image":` <br />
+`│   24: resource "docker_image" {` <br />
+`│ ` <br />
+`│ All resource blocks must have 2 labels (type, name).` <br />
+`╵` <br />
+`╷` <br />
+`│ Error: Invalid resource name` <br />
+`│ ` <br />
+`│   on main.tf line 29, in resource "docker_container" "1nginx":` <br />
+`│   29: resource "docker_container" "1nginx" {` <br />
+`│ ` <br />
+`│ A name must start with a letter or underscore and may contain only letters, digits, underscores, and dashes.` <br />
+<br />
+Команда ошибок не нашла, но вот некоторые из обнаруженных мною:<br />
+a) Строка 24:
+`resource "docker_image" {` <br />
+Должен быть второй лейбл помимо docker_image
+Правильный код:
+`resource "docker_image" "nginx"{` <br />
+b) Строка 29:
+`resource "docker_container" "1nginx" {` <br />
+Ошибка в описании одного из лейблов: "1nginx"
+Правильный код:
+`resource "docker_container" "nginx" {` <br />
+c) Строка 31:
+`name  = "example_${random_password.random_string_FAKE.resulT}"` <br />
+Ошибка в написании параметра
+Правильный код:
+`name  = "example_${random_password.random_string.result}»` <br />
+
+5. ===<br />
+`terraform {` <br />
+`  required_providers {` <br />
+`    docker = {` <br />
+`      source  = "kreuzwerker/docker"` <br />
+`      version = "~> 3.0.1"` <br />
+`    }` <br />
+`  }` <br />
+`  required_version = ">=0.13" /*Многострочный комментарий.` <br />
+` Требуемая версия terraform */` <br />
+`}` <br />
+`provider "docker" {}` <br />
+<br />
+`#однострочный комментарий` <br />
+<br />
+`resource "random_password" "random_string" {` <br />
+`  length      = 16` <br />
+`  special     = false` <br />
+`  min_upper   = 1` <br />
+`  min_lower   = 1` <br />
+`  min_numeric = 1` <br />
+`}` <br />
+<br />
+`resource "docker_image" "nginx" {` <br />
+`  name         = "nginx:latest"` <br />
+`  keep_locally = true` <br />
+`}` <br />
+<br />
+`resource "docker_container" "nginx" {` <br />
+`  image = docker_image.nginx.image_id` <br />
+`  name  = "example_${random_password.random_string.result}"` <br />
+<br />
+`  ports {` <br />
+`    internal = 80` <br />
+`    external = 9090` <br />
+`  }` <br />
+`}` <br />
+<br />
+`cerberus@Mac-mini-ILYA src % docker ps` <br />
+`CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS                  NAMES` <br />
+`29272f63c06c   6c7be49d2a11   "/docker-entrypoint.…"   5 seconds ago   Up 4 seconds   0.0.0.0:9090->80/tcp   example_upkHtF49nS1o7Q0w` <br />
+<br />
+
+6.  Ключ -auto-approve используется для применения изменений без подтверждения плана. Данный ключ может быть полезным для внесения быстрых фиксов, незначительных правок, но и также может быть опасным, если над инфраструктурой работают несколько людей.
+<br />
+`cerberus@Mac-mini-ILYA src % docker ps` <br />
+`CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS                  NAMES` <br />
+`cb665627d14c   6c7be49d2a11   "/docker-entrypoint.…"   7 seconds ago   Up 6 seconds   0.0.0.0:9090->80/tcp   hello_world` <br />
+<br />
+7. ===<br />
+`{` <br />
+`  "version": 4,` <br />
+`  "terraform_version": "1.5.7",` <br />
+`  "serial": 14,` <br />
+`  "lineage": "518e06f0-de23-b2ec-6672-38713ebc1d1f",` <br />
+`  "outputs": {},` <br />
+`  "resources": [],` <br />
+`  "check_results": null` <br />
+`}` <br />
+<br />
+8. force_remove (Boolean) If true, then the image is removed forcibly when the resource is destroyed.
+В нашем случае отсутствует ключ-значение force_remove = true, который отвечает за удаление Docker-образа при terraform destroy.
