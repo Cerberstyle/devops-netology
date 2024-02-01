@@ -1,7 +1,7 @@
 # devops-netology
 ter-homeworks_hw-01
 
-Чек лист:
+Чек лист:<br />
 ![Pasted Graphic](https://github.com/Cerberstyle/devops-netology/assets/89096235/b4d31dab-4255-431a-80a1-e57506503fa7)
 
 
