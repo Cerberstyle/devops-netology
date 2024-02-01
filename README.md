@@ -18,12 +18,12 @@ Task1
 `- Installed kreuzwerker/docker v3.0.2 (unauthenticated)` <br />
 `- Installing hashicorp/random v3.6.0...` <br />
 `- Installed hashicorp/random v3.6.0 (unauthenticated)` <br />
-<br />
+
 `Terraform has created a lock file .terraform.lock.hcl to record the provider` <br />
 `selections it made above. Include this file in your version control repository` <br />
 `so that Terraform can guarantee to make the same selections by default when` <br />
 `you run "terraform init" in the future.` <br />
-<br />
+
 `╷` <br />
 `│ Warning: Incomplete lock file information for providers` <br />
 `│ ` <br />
@@ -37,17 +37,17 @@ Task1
 `│   terraform providers lock -platform=linux_amd64` <br />
 `│ (where linux_amd64 is the platform to generate)` <br />
 `╵` <br />
-<br />
+
 `Terraform has been successfully initialized!` <br />
-<br />
+
 `You may now begin working with Terraform. Try running "terraform plan" to see` <br />
 `any changes that are required for your infrastructure. All Terraform commands` <br />
 `should now work.` <br />
-<br />
+
 `If you ever set or change modules or backend configuration for Terraform,` <br />
 `rerun this command to reinitialize your working directory. If you forget, other` <br />
 `commands will detect it and remind you to do so if necessary.` <br />
-<br />
+
 2. personal.auto.tfvars<br />
 3. "result": "PpVCCHDer5dnsCjY"<br />
 4. ===<br />
@@ -107,22 +107,22 @@ c) Строка 31:
 `  min_lower   = 1` <br />
 `  min_numeric = 1` <br />
 `}` <br />
-<br />
+
 `resource "docker_image" "nginx" {` <br />
 `  name         = "nginx:latest"` <br />
 `  keep_locally = true` <br />
 `}` <br />
-<br />
+
 `resource "docker_container" "nginx" {` <br />
 `  image = docker_image.nginx.image_id` <br />
 `  name  = "example_${random_password.random_string.result}"` <br />
-<br />
+
 `  ports {` <br />
 `    internal = 80` <br />
 `    external = 9090` <br />
 `  }` <br />
 `}` <br />
-<br />
+
 `cerberus@Mac-mini-ILYA src % docker ps` <br />
 `CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS                  NAMES` <br />
 `29272f63c06c   6c7be49d2a11   "/docker-entrypoint.…"   5 seconds ago   Up 4 seconds   0.0.0.0:9090->80/tcp   example_upkHtF49nS1o7Q0w` <br />
@@ -133,7 +133,7 @@ c) Строка 31:
 `cerberus@Mac-mini-ILYA src % docker ps` <br />
 `CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS                  NAMES` <br />
 `cb665627d14c   6c7be49d2a11   "/docker-entrypoint.…"   7 seconds ago   Up 6 seconds   0.0.0.0:9090->80/tcp   hello_world` <br />
-<br />
+
 7. ===<br />
 `{` <br />
 `  "version": 4,` <br />
@@ -144,6 +144,6 @@ c) Строка 31:
 `  "resources": [],` <br />
 `  "check_results": null` <br />
 `}` <br />
-<br />
+
 8. force_remove (Boolean) If true, then the image is removed forcibly when the resource is destroyed.
 В нашем случае отсутствует ключ-значение force_remove = true, который отвечает за удаление Docker-образа при terraform destroy.
